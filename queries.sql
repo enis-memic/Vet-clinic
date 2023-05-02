@@ -64,3 +64,21 @@ SET weight_kg = weight_kg * -1
 WHERE weight_kg < 0;
 
 COMMIT;
+
+--How many animals are there?--
+SELECT COUNT(*) AS total_number FROM animals;
+
+--How many animals have never tried to escape?--
+SELECT COUNT(*) AS never_escaped FROM animals WHERE escape_attempts=0;
+
+--What is the average weight of animals?--
+SELECT CAST(AVG(weight_kg) AS DECIMAL(5,2))  AS avg_weight FROM animals;
+
+--Who escapes the most, neutered or not neutered animals?--
+SELECT name, MAX(escape_attempts) AS escapes_attempts FROM animals WHERE neutered = true OR neutered=false GROUP BY name ORDER BY MAX(escape_attempts) DESC ;
+
+--What is the minimum and maximum weight of each type of animal?--
+SELECT MAX(weight_kg) AS max_weight, MIN(weight_kg) AS min_weight FROM animals; 
+
+--What is the average number of escape attempts per animal type of those born between 1990 and 2000?--
+SELECT CAST(AVG(escape_attempts) AS DECIMAL(5,2)) AS average_escapes FROM animals WHERE extract(YEAR FROM date_of_birth) BETWEEN 1990 AND 2000;
