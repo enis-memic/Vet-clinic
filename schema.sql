@@ -58,3 +58,10 @@ CREATE TABLE specializations (
 vets_id BIGINT REFERENCES vets (id),
 species_id BIGINT REFERENCES species (id)
 );
+
+-- Created table called visits with many to many relationship with animals, vets and date of visits--
+CREATE TABLE visits (
+vets_id BIGINT REFERENCES vets (id),
+animals_id BIGINT REFERENCES animals (id),
+date_of_visit DATE NOT NULL
+);
