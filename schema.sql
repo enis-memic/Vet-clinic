@@ -51,3 +51,10 @@ CREATE TABLE vets(
     date_of_graduation date NOT NULL,
     PRIMARY KEY (id)
 );
+
+
+-- Created table called specializations with many to many relationship with vets and species -- 
+CREATE TABLE specializations (
+vets_id BIGINT REFERENCES vets (id),
+species_id BIGINT REFERENCES species (id)
+);
