@@ -42,3 +42,12 @@ ALTER TABLE animals
 ADD CONSTRAINT owner_id
 FOREIGN KEY (owner_id)
 REFERENCES owners(id);
+
+-- Create a table named vets with following columns
+CREATE TABLE vets(
+    id bigserial NOT NULL,
+    name VARCHAR(50),
+    age integer,
+    date_of_graduation date NOT NULL,
+    PRIMARY KEY (id)
+);
