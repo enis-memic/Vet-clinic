@@ -39,3 +39,40 @@ UPDATE animals SET owner_id = 2 WHERE name IN ('Gabumon', 'Pikachu');
 UPDATE animals SET owner_id = 3 WHERE name IN ('Devimon', 'Plantmon'); 
 UPDATE animals SET owner_id = 4 WHERE name IN ('Charmander', 'Squirtle', 'Blossom'); 
 UPDATE animals SET owner_id = 5 WHERE name IN ('Angemon', 'Boarmon');
+
+
+-- Insert the following data for the vets
+INSERT INTO vets(name,age,date_of_graduation)
+VALUES('William Tatcher', 45, '2000-04-23') 
+,('Maisy Smith', 26,  '2019-01-17'),
+('Stephanie Mendez', 64,  '1981-05-04'),
+('Jack Harkness', 38,  '2008-06-08');
+
+
+-- Insert data for the specializations
+INSERT INTO specializations(vets_id,species_id) VALUES ('1', '1'),('3', '1'),('3', '2'),('4', '2');
+
+-- Insert the following data for visits
+
+INSERT INTO visits(animals_id, vets_id, date_of_visit)
+VALUES
+	('20', '1', date '2020-05-24'),
+	('20', '3', date '2020-07-22'),
+	('21', '4', date '2021-02-02'),
+	('22', '2', date '2020-01-05'),
+	('22', '2', date '2020-03-08'),
+	('22', '2', date '2020-05-14'),
+	('23', '3', date '2021-05-04'),
+	('24', '4', date '2021-02-24'),
+	('25', '2', date '2019-12-21'),
+	('25', '1', date '2020-08-10'),
+	('25', '2', date '2021-04-07'),
+	('26', '3', date '2019-09-29'),
+	('27', '4', date '2020-10-03'),
+	('27', '4', date '2020-11-04'),
+	('28', '2', date '2019-01-24'),
+	('28', '2', date '2019-05-15'),
+	('28', '2', date '2020-02-27'),
+	('28', '2', date '2020-08-03'),
+	('29', '3', date '2020-05-24'),
+	('29', '1', date '2021-01-11');
