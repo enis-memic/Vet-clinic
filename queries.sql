@@ -170,3 +170,8 @@ FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id 
  GROUP BY species.name 
  ORDER BY COUNT(animals.species_id) DESC
  LIMIT 1;
+
+ -- Explain analyze before updating -- 
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animals_id = 4;
+EXPLAIN ANALYZE SELECT * FROM visits where vets_id = 2;
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
